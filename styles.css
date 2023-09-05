@@ -2,8 +2,20 @@ html {
     height: 100vh;
 }
 
-* {
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: darkgray;
+}
+
+.terminalBox {
     background-color: black;
     color: green;
     font-size: 20px;
+    height: 80%;
+    width: 80%;
+    padding: 1em;
+    font-family: monospace;
 }

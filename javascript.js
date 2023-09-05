@@ -2,7 +2,7 @@ let i = 0;
 let speed = 50;
 let txt = "first ";
 
-const phrases = ["Running var ", "if not", "then() ", "hacking,x running."];
+const phrases = ["code.exe running within req params ", "if not", "then() ", "hacking,x running."];
 
 function getRandomPhrase() {
     let rand = Math.floor(Math.random() * phrases.length);

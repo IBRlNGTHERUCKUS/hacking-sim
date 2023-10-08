@@ -1,3 +1,6 @@
+const select = document.querySelector("select");
+const terminalBox = document.querySelector(".terminalBox");
+
 let i = 0;
 let speed = 50;
 let txt = "initializing hackerman.exe\n";
@@ -11,7 +14,7 @@ function getRandomPhrase() {
 
 function typeWriter() {
     if (i < txt.length) {
-        document.querySelector("p").innerHTML += txt.charAt(i);
+        document.querySelector("p").textContent += txt.charAt(i);
         i++;
         setTimeout(typeWriter, speed);
     }
@@ -21,4 +24,27 @@ function typeWriter() {
         txt = getRandomPhrase()
     }
 }
-document.addEventListener("keydown",  typeWriter, false);
+
+function autoScroll() {
+    terminalBox.scrollTop = terminalBox.scrollHeight;
+}
+
+function handleKeyPress(){
+    typeWriter();
+    autoScroll();
+}
+
+function changeTheme () {
+    if (select.value == 'classic'){
+        terminalBox.classList.add('classic');
+        terminalBox.classList.remove('MSDOS');
+    }
+    else if (select.value == 'MSDOS') {
+        terminalBox.classList.add('MSDOS');
+        terminalBox.classList.remove('classic');
+
+    }
+}
+
+select.addEventListener("change", changeTheme)
+document.addEventListener("keydown",  handleKeyPress, false);

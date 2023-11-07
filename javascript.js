@@ -48,3 +48,5 @@ function changeTheme () {
 
 select.addEventListener("change", changeTheme)
 document.addEventListener("keydown",  handleKeyPress, false);
+
+document.addEventListener("click",  handleKeyPress, false);
